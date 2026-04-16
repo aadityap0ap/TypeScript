@@ -37,3 +37,36 @@ function startTimer(fn:()=>void){
 startTimer(function(){
     console.log("Timer Started After 2 sec");
 })
+
+//what if the input type or in general type is non primitive -->like obj..how to give it type to it in typescript
+
+function welcomeOnBoard(user :{
+    name : string,
+    age : number
+}){
+    console.log("Hello"+  user.name + "you are" + user.age + "years old !");
+}
+
+welcomeOnBoard({
+    name : "Aditya Priyadarshi",
+    age : 21
+})
+
+//but on larger codebases the code will become ugly..so for those cases we will use interfaces
+interface userType {
+    name: string,
+    age : number,
+    lastName: string
+}
+
+function welcome(user : userType){
+    console.log("Welcome On Board" + " " + user.name);
+    console.log("You are" + " " + user.age + " " + "years old");
+    console.log("Pleasure having You Mr " + " " + user.lastName);
+}
+
+welcome({
+    name : "Aditya",
+    age : 25,
+    lastName :"Priyadarshi"
+});
