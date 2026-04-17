@@ -213,35 +213,52 @@
 //create 2 types user and admin..
 //create a function which take either user or admin as an input and returns a string saying welcome [name];
 
-interface userData {
-    name : string,
-    age : number,
-    totalCoursesPurchased : number
-}
+// interface userData {
+//     name : string,
+//     age : number,
+//     totalCoursesPurchased : number
+// }
 
-interface adminData {
-    name : string,
-    age : number,
-    rating : number
-}
+// interface adminData {
+//     name : string,
+//     age : number,
+//     rating : number
+// }
 
-type userAdminDash = userData | adminData;
+// type userAdminDash = userData | adminData;
 
-function gret(data : userAdminDash) : string {
-    return `Welcome ${data.name}`;
-}
+// function gret(data : userAdminDash) : string {
+//     return `Welcome ${data.name}`;
+// }
 
-let User : userData = {
-    name : "Rahul",
-    age : 25,
-    totalCoursesPurchased : 6
-}
+// let User : userData = {
+//     name : "Rahul",
+//     age : 25,
+//     totalCoursesPurchased : 6
+// }
 
-let admin : adminData = {
-    name : "Shubham",
-    age : 28,
-    rating : 4
-}
+// let admin : adminData = {
+//     name : "Shubham",
+//     age : 28,
+//     rating : 4
+// }
 
-console.log(gret(User));
-console.log(gret(admin));
+// console.log(gret(User));
+// console.log(gret(admin));
+
+//how to give array as types in typescript
+
+// function getmax(nums : number[]) : number{
+//     if (nums.length === 0) {
+//         throw new Error("Array is empty");
+//     }
+//     let maxVal = nums[0];
+//     for(let i = 1;i<nums.length;i++){
+//         if(nums[i] > maxVal){
+//             maxVal = nums[i];
+//         }
+//     }
+//     return maxVal;
+// }
+
+// getmax([1,5,8,7,6,12,4]);
