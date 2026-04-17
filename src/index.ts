@@ -70,3 +70,27 @@ welcome({
     age : 25,
     lastName :"Priyadarshi"
 });
+
+//types and interfaces are two sort of similar things ..but types lets us do  unions and intersection
+
+interface employee {
+    name : string,
+    age : number
+}
+
+interface specialization {
+    name : string,
+    department : string,
+    spec : string
+}
+
+type employeeDetails = employee & specialization;
+
+let user1 : employeeDetails = {
+    name : "Aditya",
+    age  : 21,
+    department : "CSE",
+    spec : "Problem Solving"
+}
+
+console.log(user1);
