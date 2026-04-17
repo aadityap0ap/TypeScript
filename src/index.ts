@@ -94,3 +94,118 @@ let user1 : employeeDetails = {
 }
 
 console.log(user1);
+
+//SOME USE CASES OF INTERFACES
+interface details {
+    name : string,
+    age : number,
+    profession : string,
+    address ? :{
+        village : string,
+        state : string,
+        pincode : number
+    }
+}
+
+let user1Details : details = {
+    name : "Aditya",
+    age : 25,
+    profession : "Software Debeloper",
+    address : {
+        village : "Raxaul",
+        state : "Bihar",
+        pincode : 845305
+    }
+}
+
+console.log(user1Details);
+
+//there is one thing which interfaces are used..like in from userdetails we want to make address portion optional so we can do put ? after address 
+//address ? :{
+    //     village : string,
+    //     state : string,
+    //     pincode : number
+    // }
+
+//now we can use or log user2Details without AddressField
+
+let user2Details : details = {
+    name : "Sumit G",
+    age : 54,
+    profession : "Senior SoftWare Developer"
+}
+
+console.log(user2Details);
+
+//but we can not partially use address means either we have to define full address or donot define the address at all
+// means we cant do this
+// let user2Details : details = {
+//     name : "Sumit G",
+//     age : 54,
+//     profession : "Senior SoftWare Developer",
+//     address : {
+//         pincode : 845305,
+//     }
+// }
+//if we have to use it in that way also then we have to put ? to that particular fields
+
+//now there is a other concept that is interfaces can use other interfaces also..--> this will help us in reduce redundency..
+//like for address we can use a interface defined earlier ..so if in future we have to change something in address interface then we donot have to go and change at every place the adress is used..we will only change to addressinterface
+
+interface address {
+     village : string,
+        state : string,
+        pincode : number
+}
+interface details2 {
+    name : string,
+    age : number,
+    profession : string,
+    address ? : address
+}
+
+let user1Details1 : details = {
+    name : "Aditya",
+    age : 25,
+    profession : "Software Debeloper",
+    address : {
+        village : "Raxaul",
+        state : "Bihar",
+        pincode : 845305
+    }
+}
+
+console.log(user1Details1);
+
+let user2Details2 : details = {
+    name : "Sumit G",
+    age : 54,
+    profession : "Senior SoftWare Developer"
+}
+
+console.log(user2Details2);
+
+//another usecase is class can also implements interfaces
+
+interface studentDetails {
+    name : string;
+    age : number;
+    standard : number;
+    section : string;
+}
+
+class SchoolLog implements studentDetails {
+    name : string;
+    age : number;
+    standard : number;
+    section : string;
+    constructor( name : string,age : number,standard : number,section : string){
+        this .name = name;
+        this.age = age;
+        this.standard = standard;
+        this.section = section
+    }
+}
+
+let student1 = new SchoolLog("Aditya",21,10,"A");
+console.log(student1.standard);
